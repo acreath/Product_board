@@ -18,7 +18,7 @@ class Content(db.Model):
     __tablename__ = 'contents'
     id = db.Column(db.Integer,autoincrement=True, primary_key=True, nullable=False)
     title = db.Column(db.String(64))
-    author = db.Column(db.String(64), unique=True,index=True)
+    author = db.Column(db.String(64),index=True)
     author_des = db.Column(db.Text)
     date = db.Column(db.String(64))
     views = db.Column(db.Integer)
