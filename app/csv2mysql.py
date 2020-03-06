@@ -25,7 +25,7 @@ def csv_to_mysql():
         
 
         if len(f) ==9 and f[0] != 'title': 
-            print(f)
+            #print(f)
             #处理数据中 1.3 万这种情况
             f[4] = num(f[4])
             f[5] = num(f[5])
@@ -44,7 +44,7 @@ def csv_to_mysql():
             f_9[5] = num(f_9[5])
             f_9[6] = num(f_9[6])
             f_9[7] = num(f_9[7])
-            print("if len(f) > 9:{}",format(f_9))
+            #print("if len(f) > 9:{}",format(f_9))
             val.append(f_9)
             cursor.executemany(sql,val)
             continue

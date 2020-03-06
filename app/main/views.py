@@ -23,11 +23,15 @@ def before_app_request():
     
 
 
-@main.route('/')
+@main.route('/', methods=['GET'])
 def index():
-    json = {
-        "product":"product_board",
-        "product manager":"Sky"
-    }
-    response = make_response(json)
-    return "Hello Product Manager"
+    
+    contents = Content.query.filter(Content.views > 1000).all()
+    page = request.args.get('page', 1, type=int)
+    pagination = Content.query.filter(Content.views > 1000).paginate(
+            page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
+             error_out=False)
+    contents = pagination.items
+    
+    return render_template('index.html', contents=contents, pagination=pagination)
+   
