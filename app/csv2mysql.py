@@ -12,6 +12,10 @@ def csv_to_mysql():
     print('csv2mysql')
     db = pymysql.connect("localhost","root","password","pb")
     cursor = db.cursor()
+    delete_sql = "truncate table contents "
+
+    cursor.execute(delete_sql)
+    print("清空数据")
     sql = "INSERT INTO contents(title, \
        author, author_des, date, views, loves,zans,comment_num,url ) \
        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"

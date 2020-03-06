@@ -21,30 +21,30 @@
     <table class="table table-hover table-responsive table-striped">
         <thead>
             <tr>
-                <th colspan="5">文章标题</th>
-                <th colspan="5">作者</th>
-                <th colspan="5">作者描述</th>
-                <th colspan="5">发表时间</th>
-                <th colspan="5">阅读数</th>
-                <th colspan="5">收藏数</th>
-                <th colspan="5">点赞数</th>
-                <th colspan="5">评论数</th>
-                <th colspan="5">操作</th>
+                <th >文章标题</th>
+                <th >作者</th>
+                <th>作者描述</th>
+                <th >发表时间</th>
+                <th >阅读数</th>
+                <th >收藏数</th>
+                <th >点赞数</th>
+                <th >评论数</th>
+                <th >操作</th>
             </tr>
         </thead>
         <tbody>
             {% for item in contents %}
             
             <tr>
-            <td colspan="5">{{item.title}}</td>
-            <td colspan="5">{{item.author}}</td>
-            <td colspan="5">{{item.author_des}}</td>
-            <td colspan="5">{{item.date}}</td>
-            <td colspan="5">{{item.views}}</td>
-            <td colspan="5">{{item.loves}}</td>
-            <td colspan="5">{{item.zans}}</td>
-            <td colspan="5">{{item.comment_num}}</td>
-            <td colspan="5"><a href={{item.url}}>详情</a></td>
+            <td >{{item.title}}</td>
+            <td >{{item.author}}</td>
+            <td >{{item.author_des}}</td>
+            <td >{{item.date}}</td>
+            <td >{{item.views}}</td>
+            <td >{{item.loves}}</td>
+            <td >{{item.zans}}</td>
+            <td >{{item.comment_num}}</td>
+            <td ><a href={{item.url}}>详情</a></td>
             </tr>
             
             {% endfor %} 

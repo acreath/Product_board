@@ -28,7 +28,7 @@ def index():
     
     contents = Content.query.filter(Content.views > 1000).all()
     page = request.args.get('page', 1, type=int)
-    pagination = Content.query.filter(Content.views > 1000).paginate(
+    pagination = Content.query.filter(Content.views > 1000,Content.loves > 100).paginate(
             page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
              error_out=False)
     contents = pagination.items
