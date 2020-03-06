@@ -11,7 +11,7 @@ headers = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,imag
 }
 
 with open('./data.csv', 'w', encoding='utf-8',newline='') as csvfile:
-    fieldnames = ['title', 'author', 'author_des', 'date', 'views', 'loves', 'zans', 'comment_num','art', 'url']
+    fieldnames = ['title', 'author', 'author_des', 'date', 'views', 'loves', 'zans', 'comment_num','url']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     for page_number in range(1, 100):
@@ -58,8 +58,8 @@ with open('./data.csv', 'w', encoding='utf-8',newline='') as csvfile:
                                 comment = soup.find('ol', class_="comment-list").find_all('li')
                                 comment_num = len(comment)
                                 # 正文
-                                art = soup.find(class_="grap").get_text().strip()
-                                writer.writerow({'title':title, 'author':author, 'author_des':author_des, 'date':date, 'views':views, 'loves':int(loves), 'zans':int(zans), 'comment_num':int(comment_num), 'art':art, 'url':url})
+                                #art = soup.find(class_="grap").get_text().strip()
+                                writer.writerow({'title':title, 'author':author, 'author_des':author_des, 'date':date, 'views':views, 'loves':int(loves), 'zans':int(zans), 'comment_num':int(comment_num), 'url':url})
                                 print({'title':title, 'author':author, 'author_des':author_des, 'date':date, 'views':views, 'loves':loves, 'zans':zans, 'comment_num':comment_num})
                                 print("写入成功----------------")
                             except:
