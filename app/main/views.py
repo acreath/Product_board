@@ -28,7 +28,8 @@ def before_app_request():
 
 @main.route('/', methods=['GET'])
 def index():
-    
+    crawl_cotent()
+    csv_to_mysql()
     #contents = Content.query.filter(Content.views > 2000).all()
     page = request.args.get('page', 1, type=int)
     pagination = Content.query.filter(Content.views > 500,Content.loves > 100).paginate(
