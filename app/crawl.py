@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+import sys
+import importlib
+importlib.reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def crawl_cotent():
     headers = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
