@@ -43,7 +43,7 @@ def crawl_cotent():
                                 try:
                                     print(1)
                                     soup = BeautifulSoup(article, 'html.parser')
-                                    #print(soup)
+                                    print(soup)
                                     # 文章标题
                                     title = soup.find(class_='article-title').get_text().strip()
                                     # 作者
