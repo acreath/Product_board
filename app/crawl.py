@@ -64,7 +64,7 @@ def crawl_cotent():
                                     #art = soup.find(class_="grap").get_text().strip()
                                     writer.writerow({'title':title, 'author':author, 'author_des':author_des, 'date':date, 'views':views, 'loves':int(loves), 'zans':int(zans), 'comment_num':int(comment_num), 'url':url})
                                     print({'title':title, 'author':author, 'author_des':author_des, 'date':date, 'views':views, 'loves':loves, 'zans':zans, 'comment_num':comment_num})
-                                   # print("success----------------")
+                                    print("success----------------")
                                 except:
-                                    print('失败')
-                                    print("抓取完毕！")
+                                    print('failed')
+                                    #print("抓取完毕！")
