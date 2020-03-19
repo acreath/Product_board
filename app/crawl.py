@@ -16,12 +16,12 @@ def crawl_cotent():
         fieldnames = ['title', 'author', 'author_des', 'date', 'views', 'loves', 'zans', 'comment_num','url']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        for page_number in range(1, 10):
+        for page_number in range(1, 2):
             page_url = "http://www.woshipm.com/category/pmd/page/{}".format(str(page_number))
-            #print('url:'+page_url)
+            print('url:'+page_url)
            # print('正在抓取第' + str(page_number) + '页>>>')
             response = requests.get(url=page_url, headers=headers)
-            #print('请求结果：' + str(response.status_code))
+            print( str(response.status_code))
             if response.status_code == 200:
                 page_data = response.text
                 #print('page_data:{}'.format(page_data))
@@ -35,12 +35,13 @@ def crawl_cotent():
                             response = requests.get(url=url, headers=headers)
                             # time.sleep(3)
                            # print('正在抓取：' + url)
-                            # print(response.status_code)
+                            print(response.status_code)
                             if response.status_code == 200:
                                 article = response.text
                                 #print(article)
                             if article:
                                 try:
+                                    print(1)
                                     soup = BeautifulSoup(article, 'html.parser')
                                     #print(soup)
                                     # 文章标题
