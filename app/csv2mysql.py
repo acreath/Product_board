@@ -15,7 +15,7 @@ def csv_to_mysql():
     delete_sql = "truncate table contents "
 
     cursor.execute(delete_sql)
-    print("清空数据")
+    #print("清空数据")
     sql = "INSERT INTO contents(title, \
        author, author_des, date, views, loves,zans,comment_num,url ) \
        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
