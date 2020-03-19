@@ -1,10 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
-import sys
-import importlib
-importlib.reload(sys)
-sys.setdefaultencoding('utf-8')
+
 
 def crawl_cotent():
     headers = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -22,7 +19,7 @@ def crawl_cotent():
         for page_number in range(1, 10):
             page_url = "http://www.woshipm.com/category/pmd/page/{}".format(str(page_number))
             #print('url:'+page_url)
-            print('正在抓取第' + str(page_number) + '页>>>')
+           # print('正在抓取第' + str(page_number) + '页>>>')
             response = requests.get(url=page_url, headers=headers)
             #print('请求结果：' + str(response.status_code))
             if response.status_code == 200:
@@ -37,7 +34,7 @@ def crawl_cotent():
                             # 文章页面解析，获取文章标题、作者、作者简介、日期、浏览量、收藏量、点赞量、评论量、正文、文章链接
                             response = requests.get(url=url, headers=headers)
                             # time.sleep(3)
-                            print('正在抓取：' + url)
+                           # print('正在抓取：' + url)
                             # print(response.status_code)
                             if response.status_code == 200:
                                 article = response.text
@@ -67,7 +64,7 @@ def crawl_cotent():
                                     #art = soup.find(class_="grap").get_text().strip()
                                     writer.writerow({'title':title, 'author':author, 'author_des':author_des, 'date':date, 'views':views, 'loves':int(loves), 'zans':int(zans), 'comment_num':int(comment_num), 'url':url})
                                     print({'title':title, 'author':author, 'author_des':author_des, 'date':date, 'views':views, 'loves':loves, 'zans':zans, 'comment_num':comment_num})
-                                    print("写入成功----------------")
+                                   # print("success----------------")
                                 except:
-                                    print('抓取失败')
+                                    print('失败')
                                     print("抓取完毕！")
