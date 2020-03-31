@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div class="container">
-      <div style="display:inline;">
-        <div><img src="./assets/报表.png"></div>
-        <div><h1>产品情报站</h1></div>
+      <div> 
+          <img src="./assets/报表.png"  align="left"/> 
+           <h2>产品情报站</h2>
       </div>
       <router-view/>
     </div>
