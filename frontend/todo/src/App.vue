@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="container">
-      <img src="./assets/报表.png">
-      <h1>
-          产品情报站
-      </h1>
+      <div style="display:inline;">
+        <div><img src="./assets/报表.png"></div>
+        <div><h1>产品情报站</h1></div>
+      </div>
       <router-view/>
     </div>
   </div>
@@ -15,6 +15,3 @@ export default {
   name: 'App'
 }
 </script>
-
-
-

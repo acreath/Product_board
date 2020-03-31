@@ -14,11 +14,11 @@ def crawl_cotent():
     'Cookie' : 't=MHpOYzlnMmp6dkFJTEVmS3pDeldrSWRTazlBOXpkRjBzRXpZOU4yVkNZWWl5QVhMVXBjMU5WcnpwQ2NCQS90ZkVsZ3lTU2Z0T3puVVZFWFRFOXR1TnVrbUV2UFlsQWxuemY4NG1wWFRYMENVdDRPQ1psK0NFZGJDZ0lsN3BQZmo%3D; s=Njg4NDkxLCwxNTQyMTk0MTEzMDI5LCxodHRwczovL3N0YXRpYy53b3NoaXBtLmNvbS9XWF9VXzIwMTgwNV8yMDE4MDUyMjE2MTcxN180OTQ0LmpwZz9pbWFnZVZpZXcyLzIvdy84MCwsJUU1JUE0JUE3JUU4JTk5JUJF; Hm_lvt_b85cbcc76e92e3fd79be8f2fed0f504f=1547467553,1547544101,1547874937,1547952696; Hm_lpvt_b85cbcc76e92e3fd79be8f2fed0f504f=1547953708'
     }
 
-    with open('./data.csv', 'a', encoding='utf-8',newline='') as csvfile:
+    with open('../data.csv', 'a', encoding='utf-8',newline='') as csvfile:
         fieldnames = ['title', 'author', 'author_des', 'date', 'views', 'loves', 'zans', 'comment_num','url']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        for page_number in range(1, 10):
+        for page_number in range(3, 5):
             page_url = "http://www.woshipm.com/category/pmd/page/{}".format(str(page_number))
             #print('url:'+page_url)
             print('正在抓取第' + str(page_number) + '页>>>')

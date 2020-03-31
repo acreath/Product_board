@@ -28,6 +28,11 @@
           </tr>
         </tbody>
     </table>
+  <div style="float:right" >
+    <ul class="pagination" v-for="n in num_page" v-bind:key="n.id">
+      <li style="float:left" v-bind:class="{active: active[n]}" v-on:click="get_content(n)"><a >{{n}}</a></li>
+    </ul>
+  </div>
   </div>
 </template>
 
@@ -38,19 +43,48 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      content_list: []
+      content_list: [],
+      num_page:[],
+      active:[]
     }
   },
   created () {
-    const path = 'http://127.0.0.1:5000/'
+    
+    const path = 'http://127.0.0.1:5000/1'
     axios.get(path)
       .then((res) => {
         console.log(res.data)
         this.content_list = res.data['list']
+        this.num_page = res.data['num_page']
       })
       .catch((error) => {
         console.error(error)
       })
+      for (var i=0; i<this.num_page.length;i++)
+      {
+        this.active[i] = ''
+      }
+  },
+  methods:{
+    get_content:function (num) {
+      
+      const path = 'http://127.0.0.1:5000/' + num
+      axios.get(path)
+      .then((res) => {
+        console.log(res.data)
+        this.content_list = res.data['list']
+        this.num_page = res.data['num_page']
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+
+      for (var i=0; i<this.num_page.length;i++)
+      {
+        this.active[i] = ''
+      }
+      this.active[num] = 'active'
+    }
   }
 }
 </script>

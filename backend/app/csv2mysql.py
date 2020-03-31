@@ -10,7 +10,7 @@ def num(n):
 
 def csv_to_mysql():
     print('csv2mysql')
-    db = pymysql.connect("118.31.46.60","sky","password","pb",charset='utf8')
+    db = pymysql.connect("localhost","root","password","pb",charset='utf8')
     cursor = db.cursor()
     # delete_sql = "truncate table contents "
 
