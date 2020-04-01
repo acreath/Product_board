@@ -125,4 +125,4 @@ dmypy.json
 .pyre/
 
 .idea
-__pycache__
+__pycache__/
