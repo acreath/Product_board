@@ -29,7 +29,7 @@ class DevelopmentConfig(Config):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') 
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'mysql+pymysql://root:password@localhost:3306/pb'
+        'mysql+pymysql://sky:password@localhost:3306/pb?host=118.31.46.60?port=3306'
 
 class TestingConfig(Config): 
     TESTING = True

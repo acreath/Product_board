@@ -1,30 +1,30 @@
 <template>
-  <div class="hello">
-    <table class="table table-hover table-responsive table-striped">
+  <div class="hello table-responsive ">
+    <table class="table">
         <thead>
-            <tr>
-                <th >文章标题</th>
-                <th >作者</th>
-                <th>作者描述</th>
-                <th >发表时间</th>
-                <th >阅读数</th>
-                <th >收藏数</th>
-                <th >点赞数</th>
-                <th >评论数</th>
-                <th >操作</th>
+            <tr class="active">
+                <th style="vertical-align: middle;">标题</th>
+                <th style="vertical-align: middle;">作者</th>
+                <th style="vertical-align: middle;">作者描述</th>
+                <th style="vertical-align: middle;">发表时间</th>
+                <th style="vertical-align: middle;">阅读数</th>
+                <th style="vertical-align: middle;">收藏数</th>
+                <th style="vertical-align: middle;">点赞数</th>
+                <th style="vertical-align: middle;">评论数</th>
+                <th style="vertical-align: middle;">操作</th>
             </tr>
         </thead>
         <tbody v-for="item in content_list" v-bind:key="item.id">
-          <tr>
-            <td>{{item['title']}}</td>
-            <td>{{item['author']}}</td>
-            <td>{{item['author_des']}}</td>
-            <td>{{item['date']}}</td>
-            <td>{{item['views']}}</td>
-            <td>{{item['loves']}}</td>
-            <td>{{item['zans']}}</td>
-            <td>{{item['comment_num']}}</td>
-            <td><a v-bind:href="item['url']" target="view_window">详情</a></td>
+          <tr style="height:50px">
+            <td style="width:260px;word-break:break-all;vertical-align: middle;">{{item['title']}}</td>
+            <td style="vertical-align: middle;">{{item['author']}}</td>
+            <td style="vertical-align: middle;">{{item['author_des']}}</td>
+            <td style="vertical-align: middle;">{{item['date']}}</td>
+            <td style="vertical-align: middle;" class="success">{{item['views']}}</td>
+            <td style="vertical-align: middle;">{{item['loves']}}</td>
+            <td style="vertical-align: middle;">{{item['zans']}}</td>
+            <td style="vertical-align: middle;">{{item['comment_num']}}</td>
+            <td style="vertical-align: middle;"><a v-bind:href="item['url']" target="view_window">详情</a></td>
           </tr>
         </tbody>
     </table>
